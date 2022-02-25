@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1072,757.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1072,1072.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -36,6 +36,7 @@
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -63,6 +64,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
@@ -71,57 +73,48 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="375.2,692.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="outPassword">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_Password" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="outUsername">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_Username" />
-        </Variable.Default>
-      </Variable>
-    </Sequence.Variables>
+  <Sequence DisplayName="ACME_Sequence" sap:VirtualizedContainerService.HintSize="375.2,1100" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PromptForCredentials workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflow_Login\PromptForCredentials.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Prompts a user to enter a username and password to be used to login to the ACME site&#xD;&#xA;&#xD;&#xA;Pre: N/A&#xD;&#xA;Post: Saves Username and Password in variables" DisplayName="Invoke PromptForCredentials workflow" sap:VirtualizedContainerService.HintSize="333.6,180" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflow_Login\PromptForCredentials.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Password">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_Password" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Username">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_Username" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Password">[out_Password]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[out_Username]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OpenBrowser workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflow_Login\OpenBrowser.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Opens and browser and navigates to the ACME URL&#xD;&#xA;&#xD;&#xA;Pre: N/A&#xD;&#xA;Post: Loads ACME URL in browser" DisplayName="Invoke OpenBrowser workflow" sap:VirtualizedContainerService.HintSize="333.6,164" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflow_Login\OpenBrowser.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="in_URL" />
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke LogInACME workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow_Login\LogInACME.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Selects the Log In button and tries to enter the users credentails&#xD;&#xA;&#xD;&#xA;Pre: ACME URL is loaded&#xD;&#xA;Post: User is logged into the ACME application" DisplayName="Invoke LogInACME workflow" sap:VirtualizedContainerService.HintSize="333.6,180" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow_Login\LogInACME.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Username">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_Username" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="out_Password">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_Password" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Username">[out_Username]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="out_Password">[out_Password]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke IterateWorkItems workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Workflow_Process\IterateWorkItems.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="URL_AcmeWI">
-          <Literal x:TypeArguments="x:String">https://acme-test.uipath.com/work-items</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="URL_SHA1Generator">
-          <Literal x:TypeArguments="x:String">http://www.sha1-online.com/</Literal>
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="URL_AcmeWI">https://acme-test.uipath.com/work-items</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="URL_SHA1Generator">http://www.sha1-online.com/</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ProcessWorkItem workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Workflow_Process\ProcessWorkItem.xaml">
@@ -130,5 +123,6 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_WIID" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'chrome.exe ACME'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="124cf90209bc6f4e48656cc7ccf57702" Selector="&lt;html app='chrome.exe' title='ACME System *' /&gt;" WaitForReady="INTERACTIVE" />
   </Sequence>
 </Activity>
