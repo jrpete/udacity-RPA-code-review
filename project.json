@@ -3,8 +3,6 @@
   "description": "Workflow files for Course 3 Project - RPA ND",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.8.6]",
-    "UiPath.Mail.Activities": "[1.8.6]",
     "UiPath.System.Activities": "[20.4.0]",
     "UiPath.UIAutomation.Activities": "[20.4.2]"
   },

@@ -65,6 +65,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -101,8 +102,12 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Selects the Log In button and tries to enter the users credentails&#xA;&#xA;Pre: ACME URL is loaded&#xA;Post: User is logged into the ACME application" DisplayName="Invoke LogInACME workflow" sap:VirtualizedContainerService.HintSize="333.6,180" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow_Login\LogInACME.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Username">[out_Username]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="out_Password">[out_Password]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Username">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_Username" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Password">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_Password" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

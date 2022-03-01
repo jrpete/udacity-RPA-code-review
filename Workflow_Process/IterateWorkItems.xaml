@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1460.8,2868.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1419.2,2807.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>IterateWorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -70,10 +70,9 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="IterateWorkItems" sap:VirtualizedContainerService.HintSize="1471.2,2804" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="IterateWorkItems" sap:VirtualizedContainerService.HintSize="1429.6,2742.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="x:String" Name="WorkItems" />
@@ -83,7 +82,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch sap2010:Annotation.AnnotationText="Loads the ACME URL" DisplayName="Try_Load_URL" sap:VirtualizedContainerService.HintSize="1429.6,624.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="Loads the ACME URL" DisplayName="Try_Load_URL" sap:VirtualizedContainerService.HintSize="1388,624.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -131,7 +130,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" sap2010:Annotation.AnnotationText="Extract values from the  Work Items Table" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract_Work_Items" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="1429.6,138.4" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" NextLinkSelector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;&lt;webctrl tag='A' innertext='&amp;gt;' /&gt;" SimulateClick="True">
+    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" sap2010:Annotation.AnnotationText="Extract values from the  Work Items Table" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract_Work_Items" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="1388,138.4" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" NextLinkSelector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;&lt;webctrl tag='A' innertext='&amp;gt;' /&gt;" SimulateClick="True">
       <ui:ExtractData.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8f775b6e-3d01-4fc4-9490-9969e7533d35" InformativeScreenshot="7d1b4308582d6115204993887c6614c1" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;&lt;webctrl tag='TABLE' /&gt;" TimeoutMS="2000" WaitForReady="COMPLETE" />
       </ui:ExtractData.Target>
@@ -141,14 +140,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExtractData>
-    <ui:LogMessage sap2010:Annotation.AnnotationText="Log count of work items" DisplayName="Log_WorkItem_Count" sap:VirtualizedContainerService.HintSize="1429.6,124" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[ExtractDataTable.Rows.Count.ToString]">
+    <ui:LogMessage sap2010:Annotation.AnnotationText="Log count of work items" DisplayName="Log_WorkItem_Count" sap:VirtualizedContainerService.HintSize="1388,124" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[ExtractDataTable.Rows.Count.ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filter Work Items Data Table for only records with a 'Type' of W5 and 'Status' of 'Open'" DataTable="[ExtractDataTable]" DisplayName="Filter_Work_Items" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1429.6,104" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[ExtractDataTable]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filter Work Items Data Table for only records with a 'Type' of W5 and 'Status' of 'Open'" DataTable="[ExtractDataTable]" DisplayName="Filter_Work_Items" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1388,104" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[ExtractDataTable]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -180,8 +179,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:OutputDataTable DataTable="[ExtractDataTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1429.6,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[WorkItems]" />
-    <If sap2010:Annotation.AnnotationText="Check to see if any work items are in the Data Table after filtering" Condition="[ExtractDataTable.Rows.Count &lt;= 0]" DisplayName="If_Work_Items_Exist" sap:VirtualizedContainerService.HintSize="1429.6,1497.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:OutputDataTable DataTable="[ExtractDataTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1388,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[WorkItems]" />
+    <If sap2010:Annotation.AnnotationText="Check to see if any work items are in the Data Table after filtering" Condition="[ExtractDataTable.Rows.Count &lt;= 0]" DisplayName="If_Work_Items_Exist" sap:VirtualizedContainerService.HintSize="1388,1436" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -200,7 +199,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="WorkItems_Sequence" sap:VirtualizedContainerService.HintSize="1010.4,1307.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="WorkItems_Sequence" sap:VirtualizedContainerService.HintSize="968.8,1245.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="ui:Browser" Name="HashBrowser" />
           </Sequence.Variables>
@@ -209,7 +208,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" sap2010:Annotation.AnnotationText="Open up the URL to generate SHA1 Hash" BrowserType="Chrome" DisplayName="Open_SHA1_Generator" sap:VirtualizedContainerService.HintSize="968.8,149.6" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[HashBrowser]" Url="[URL_SHA1Generator]">
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" sap2010:Annotation.AnnotationText="Open up the URL to generate SHA1 Hash" BrowserType="Chrome" DisplayName="Open_SHA1_Generator" sap:VirtualizedContainerService.HintSize="927.2,149.6" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[HashBrowser]" Url="[URL_SHA1Generator]">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -223,59 +222,54 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:OpenBrowser>
-          <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through Work Items in DT" DataTable="[ExtractDataTable]" DisplayName="For_Each_Row_WorkItems_DT" sap:VirtualizedContainerService.HintSize="968.8,962.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through Work Items in DT" DataTable="[ExtractDataTable]" DisplayName="For_Each_Row_WorkItems_DT" sap:VirtualizedContainerService.HintSize="927.2,900.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="919.2,782.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap:VirtualizedContainerService.HintSize="877.6,720.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[row(&quot;WIID&quot;).ToString &lt;&gt; &quot;&quot;]" sap:VirtualizedContainerService.HintSize="877.6,689.6" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[row(&quot;WIID&quot;).ToString &lt;&gt; &quot;&quot;]" DisplayName="If_WIID_Not_Null" sap:VirtualizedContainerService.HintSize="836,628" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="458.4,530.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence sap2010:Annotation.AnnotationText="If WIID exists, call ProcessWorkItem.xaml" DisplayName="WIID_Sequence" sap:VirtualizedContainerService.HintSize="416.8,468.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap:VirtualizedContainerService.HintSize="416.8,437.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence sap:VirtualizedContainerService.HintSize="375.2,344.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence sap:VirtualizedContainerService.HintSize="375.2,344.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[row(&quot;WIID&quot;).ToString]" />
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send Work Items to be processed for updates" DisplayName="Invoke ProcessWorkItem workflow" sap:VirtualizedContainerService.HintSize="333.6,119.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow_Process\ProcessWorkItem.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_URL_AcmeWI">https://acme-test.uipath.com/work-items/</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_WIID">[row("WIID").ToString]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[row(&quot;WIID&quot;).ToString]" />
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Send Work Items to be processed for updates" DisplayName="Invoke ProcessWorkItem workflow" sap:VirtualizedContainerService.HintSize="333.6,119.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow_Process\ProcessWorkItem.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_URL_AcmeWI">https://acme-test.uipath.com/work-items/</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_WIID">[row("WIID").ToString]</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeWorkflowFile>
-                          </Sequence>
+                          </ui:InvokeWorkflowFile>
                         </Sequence>
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,185.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence sap2010:Annotation.AnnotationText="" DisplayName="No_WIID_Sequence" sap:VirtualizedContainerService.HintSize="375.2,216.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;No WIID. Skpping row.&quot;]" />
@@ -291,7 +285,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <ui:CloseTab Browser="[HashBrowser]" DisplayName="Close Tab - SHA1 " sap:VirtualizedContainerService.HintSize="968.8,22.4" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+          <ui:CloseTab Browser="[HashBrowser]" DisplayName="Close Tab - SHA1 " sap:VirtualizedContainerService.HintSize="927.2,22.4" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
         </Sequence>
       </If.Else>
     </If>
